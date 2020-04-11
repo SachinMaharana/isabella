@@ -9,10 +9,6 @@ use env_logger;
 
 use std::{env, io};
 
-#[get("/favicon")]
-async fn favicon() -> Result<fs::NamedFile> {
-    Ok(fs::NamedFile::open("static/favicon.ico")?)
-}
 #[get("/healthz")]
 async fn healthz() -> Result<HttpResponse> {
     Ok(HttpResponse::Ok().json("Okay"))
@@ -30,7 +26,6 @@ async fn main() -> io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .wrap(middleware::Logger::default())
-            .service(favicon)
             .service(healthz)
             .default_service(
                 web::resource("").route(web::get().to(p404)).route(
