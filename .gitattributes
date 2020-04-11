@@ -1,1 +1,2 @@
-*.rs linguist-language=Rust
+* linguist-vendored
+*.js linguist-vendored=false
