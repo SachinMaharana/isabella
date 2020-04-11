@@ -149,11 +149,11 @@ Project Link: [https://github.com/SachinMaharana/isabella](https://github.com/Sa
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/SachinMaharana/isabella.svg?style=flat-square
 [contributors-url]: https://github.com/SachinMaharana/isabella/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/SachinMaharana/isabella.svg?style=flat-square
 [forks-url]: https://github.com/SachinMaharana/isabella/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/SachinMaharana/isabella.svg?style=flat-square
 [stars-url]: https://github.com/SachinMaharana/isabella/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
