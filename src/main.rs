@@ -24,25 +24,31 @@ struct Query {
     cmd: String,
 }
 
-fn reddit(qry: &str) -> String {
-    if qry == "rd" {
+fn reddit(query: &str) -> String {
+    if query == "rd" {
         "https://reddit.com".to_string()
     } else {
-        format!("https://reddit.com/r/{}", &qry[3..])
+        format!("https://reddit.com/r/{}", &query[3..])
     }
 }
 
+fn google(query: &str) -> String {
+    match query {
+        "gg" => "https://google.com".to_string(),
+        _ => format!("https://google.com/search?q={}", &query[..]),
+    }
+}
 async fn search(_req: HttpRequest, info: web::Query<Query>) -> HttpResponse {
-    let mut cmd_copy = info.cmd.as_str().clone();
-    if cmd_copy.contains(' ') {
-        let space_index = cmd_copy.find(' ').unwrap_or_else(|| 0);
-        cmd_copy = &cmd_copy[..space_index];
+    let mut cmd = info.cmd.as_str();
+    if cmd.contains(' ') {
+        let space_index = cmd.find(' ').unwrap_or_else(|| 0);
+        cmd = &cmd[..space_index];
     }
 
-    let redirect_url = match cmd_copy {
+    let redirect_url = match cmd {
         "tw" => String::from("https://twitter.com"),
         "rd" => reddit(&info.cmd.as_str()),
-        _ => String::from("https://google.com"),
+        _ => google(&info.cmd.as_str()),
     };
     HttpResponse::Ok()
         .status(StatusCode::SEE_OTHER)
