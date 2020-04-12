@@ -51,8 +51,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-isabella is a project that let's you write smart bookmarks in Rust inspired by bunny and use it right from your browser.
-one of the projects i am doing while learning Rust programming Language.
+isabella is a project that let's you write smart bookmarks in Rust inspired by [bunny](http://www.bunny1.org/), a tool by facebook, and use it right from your browser.
+One of the projects i am doing while learning Rust programming Language.
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
@@ -100,7 +100,7 @@ cargo run
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+TODO
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 

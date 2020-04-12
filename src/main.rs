@@ -1,14 +1,14 @@
 #[macro_use]
 extern crate actix_web;
 
+use std::{env, io};
+
 use actix_files as fs;
 use actix_web::http::{header, StatusCode};
 use actix_web::{guard, middleware, web, App, HttpRequest, HttpResponse, HttpServer, Result};
 
 use env_logger;
 use serde::Deserialize;
-
-use std::{env, io};
 
 #[get("/healthz")]
 async fn healthz() -> Result<HttpResponse> {
@@ -28,7 +28,6 @@ fn reddit(qry: &str) -> String {
     if qry == "rd" {
         "https://reddit.com".to_string()
     } else {
-        // let sub = &qry[3..];
         format!("https://reddit.com/r/{}", &qry[3..])
     }
 }
