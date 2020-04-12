@@ -51,6 +51,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+isabella is a project that let's you write smart bookmarks in Rust inspired by bunny and use it right from your browser.
+one of the projects i am doing while learning Rust programming Language.
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
@@ -58,9 +60,8 @@
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [Rust](https://www.rust-lang.org/)
+* [Actix](https://actix.rs/)
 
 
 
@@ -71,10 +72,10 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+Make sure you have Rust installed.
+
 ```sh
-npm install npm@latest -g
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 ### Installation
@@ -83,10 +84,16 @@ npm install npm@latest -g
 ```sh
 git clone https://github.com/SachinMaharana/isabella.git
 ```
-2. Install NPM packages
+2. Build the project
 ```sh
-npm install
+cargo build
 ```
+3. Run the project.
+```sh
+cargo run
+```
+4. Visit localhost:8080/healthz to check if is running.
+5. To test, go to localhost:8080/search?cmd=tw and you should be redirected to Twitter
 
 
 

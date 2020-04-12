@@ -20,15 +20,29 @@ async fn p404() -> Result<fs::NamedFile> {
 }
 
 #[derive(Deserialize, Debug)]
-struct Info {
+struct Query {
     cmd: String,
 }
 
-async fn search(_req: HttpRequest, info: web::Query<Info>) -> HttpResponse {
-    println!("Nope {:?}", info.cmd);
-    let cmd: &str = info.cmd.as_str();
-    let redirect_url = match cmd {
+fn reddit(qry: &str) -> String {
+    if qry == "rd" {
+        "https://reddit.com".to_string()
+    } else {
+        // let sub = &qry[3..];
+        format!("https://reddit.com/r/{}", &qry[3..])
+    }
+}
+
+async fn search(_req: HttpRequest, info: web::Query<Query>) -> HttpResponse {
+    let mut cmd_copy = info.cmd.as_str().clone();
+    if cmd_copy.contains(' ') {
+        let space_index = cmd_copy.find(' ').unwrap_or_else(|| 0);
+        cmd_copy = &cmd_copy[..space_index];
+    }
+
+    let redirect_url = match cmd_copy {
         "tw" => String::from("https://twitter.com"),
+        "rd" => reddit(&info.cmd.as_str()),
         _ => String::from("https://google.com"),
     };
     HttpResponse::Ok()
